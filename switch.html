@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch - Icon Plus Panduan</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="top-bar">
+        <div class="logo">
+          <a href="index.html">
+            <img src="assets/logo.png" alt="Logo" />
+          </a>
+        </div>
+        <nav class="menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gudang.html">Gudang</a></li>
+            <li><a href="preconfig.html">Pre-config</a></li>
+            <li><a href="faq.html">FAQ & Bantuan</a></li>
+          </ul>
+        </nav>
+        <a href="login.html">
+          <div>
+            <a href="login.html" class="login-btn">Login</a>
+          </div>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <!-- Search Section -->
+      <section class="search-section">
+        <input
+          type="text"
+          class="search-bar"
+          id="searchInput"
+          placeholder="Cari Switch..."
+          onkeyup="searchSwitch()"
+        />
+      </section>
+
+      <!-- Switch Tutorial Section -->
+      <section class="switch-tutorial">
+        <h1 class="tutorial-title">Tutorial Pre-config Switch</h1>
+
+        <!-- Switch Grid Section -->
+        <div class="switch-container">
+          <!-- Switch 1 -->
+          <div
+            class="switch-item"
+            onclick="openModal('switch1')"
+            data-name="Switch Model 1"
+          >
+            <img src="assets/swict1.jpg" alt="Switch 1" />
+            <h2>Switch Model 1</h2>
+          </div>
+
+          <div
+            class="switch-item"
+            onclick="openModal('switch1')"
+            data-name="Switch Model 1"
+          >
+            <img src="assets/swict1.jpg" alt="Switch 1" />
+            <h2>Switch Model 1</h2>
+          </div>
+
+          <!-- Switch 2 -->
+          <div
+            class="switch-item"
+            onclick="openModal('switch2')"
+            data-name="Switch Model 2"
+          >
+            <img src="assets/switch2-icon.png" alt="Switch 2" />
+            <h2>Switch Model 2</h2>
+          </div>
+
+          <!-- Switch 3 -->
+          <div
+            class="switch-item"
+            onclick="openModal('switch3')"
+            data-name="Switch Model 3"
+          >
+            <img src="assets/switch3-icon.png" alt="Switch 3" />
+            <h2>Switch Model 3</h2>
+          </div>
+
+          <!-- Switch 4 -->
+          <div
+            class="switch-item"
+            onclick="openModal('switch4')"
+            data-name="Switch Model 4"
+          >
+            <img src="assets/switch4-icon.png" alt="Switch 4" />
+            <h2>Switch Model 4</h2>
+          </div>
+
+          <!-- Switch 5 -->
+          <div
+            class="switch-item"
+            onclick="openModal('switch5')"
+            data-name="Switch Model 5"
+          >
+            <img src="assets/switch5-icon.png" alt="Switch 5" />
+            <h2>Switch Model 5</h2>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Icon Plus. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // Function to open modal when switch is clicked
+      function openModal(switchType) {
+        const modal = document.getElementById("modal");
+        const title = document.getElementById("modal-title");
+        const description = document.getElementById("modal-description");
+
+        // Set modal content based on the switch clicked
+        if (switchType === "switch1") {
+          title.textContent = "Switch Model 1";
+          description.textContent =
+            "Deskripsi lengkap tentang Switch Model 1 dan pengaturannya.";
+        } else if (switchType === "switch2") {
+          title.textContent = "Switch Model 2";
+          description.textContent =
+            "Deskripsi lengkap tentang Switch Model 2 dan pengaturannya.";
+        } else if (switchType === "switch3") {
+          title.textContent = "Switch Model 3";
+          description.textContent =
+            "Deskripsi lengkap tentang Switch Model 3 dan pengaturannya.";
+        } else if (switchType === "switch4") {
+          title.textContent = "Switch Model 4";
+          description.textContent =
+            "Deskripsi lengkap tentang Switch Model 4 dan pengaturannya.";
+        } else if (switchType === "switch5") {
+          title.textContent = "Switch Model 5";
+          description.textContent =
+            "Deskripsi lengkap tentang Switch Model 5 dan pengaturannya.";
+        }
+
+        modal.style.display = "block"; // Show modal
+      }
+
+      // Function to close the modal
+      function closeModal() {
+        const modal = document.getElementById("modal");
+        modal.style.display = "none"; // Hide modal
+      }
+
+      // Event listener to close modal when clicking outside the modal content
+      window.onclick = function (event) {
+        const modal = document.getElementById("modal");
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      // Function to filter switch items
+      function searchSwitch() {
+        const input = document.getElementById("searchInput");
+        const filter = input.value.toLowerCase();
+        const switchItems = document.getElementsByClassName("switch-item");
+
+        for (let i = 0; i < switchItems.length; i++) {
+          const item = switchItems[i];
+          const name = item.getAttribute("data-name").toLowerCase();
+
+          if (name.includes(filter)) {
+            item.style.display = ""; // Show the item if it matches
+          } else {
+            item.style.display = "none"; // Hide the item if it doesn't match
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

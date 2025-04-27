@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Icon Plus Panduan</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+    <script defer src="banner.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="top-bar">
+        <div class="logo">
+          <a href="index.html">
+            <img src="assets/logo.png" alt="Logo" />
+          </a>
+        </div>
+        <nav class="menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gudang.html">Gudang</a></li>
+            <li><a href="preconfig.html">Pre-config</a></li>
+            <li><a href="faq.html">FAQ & Bantuan</a></li>
+          </ul>
+        </nav>
+        <a href="login.html">
+        <div>
+          <a href="login.html" class="login-btn">Login</a>
+        </div>
+        </a>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="banner">
+        <div class="banner-container">
+          <button class="arrow left" onclick="moveSlide(-1)">&#10094;</button>
+          <div class="banner">
+            <img src="assets/banner.png" alt="Banner 1" />
+            <img src="assets/banner2.png" alt="Banner 2" />
+            <img src="assets/banner3.png" alt="Banner 3" />
+          </div>
+          <button class="arrow right" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+      </section>
+    </main>
+
+<!--footer-->
+    <footer>
+      <p>&copy; 2025 Icon Plus. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

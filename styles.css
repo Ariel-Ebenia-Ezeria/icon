@@ -1,0 +1,821 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Top bar */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white; /* White background for the top bar */
+    padding: 10px 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: black; /* Text color to black */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow under the top bar */
+}
+
+.top-bar .logo, .top-bar .menu ul li a {
+    color: black !important; /* Force black color on logo and menu items */
+}
+
+/* logo */
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.user-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Menu */
+.menu {
+    padding: 10px 0;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+}
+
+.menu ul li {
+     margin: 0 25px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: black !important; /* Force black color on menu items */
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: background 0.3s;
+}
+
+.menu ul li a:hover {
+    background: #004494;
+    border-radius: 5px;
+}
+
+.menu ul li a.login-btn {
+    display: inline-block;
+    width: 200px;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.menu ul li a.login-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Banner */
+.banner-container {
+    position: relative;
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+    margin-top: 30px; 
+}
+
+.banner {
+    display: flex;
+    transition: transform 0.5s ease-in-out; 
+}
+
+.banner img {
+    width: 100%;   
+    height: 100%;  
+    object-fit: cover; 
+    border-radius: 10px;
+}
+
+/* Arrow buttons */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+}
+
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
+
+/* Search Bar Section */
+.search-section {
+    text-align: center;
+    margin-top: 40px; 
+}
+
+.search-bar {
+    padding: 12px; 
+    width: 60%;      
+    max-width: 100px; 
+    font-size: 18px;  
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.user-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Menu styling */
+.menu {
+    padding: 10px 0;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+}
+
+.menu ul li {
+     margin: 0 25px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: background 0.3s;
+}
+
+.menu ul li a:hover {
+    background: #004494;
+    border-radius: 5px;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+/* Banner container */
+.banner-container {
+    position: relative;
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+    margin-top: 30px; 
+}
+
+.banner {
+    display: flex;
+    transition: transform 0.5s ease-in-out; 
+}
+
+.banner img {
+    width: 100%;  
+    height: 100%;  
+    object-fit: cover; 
+    border-radius: 10px;
+}
+
+/* Arrow buttons for navigation */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
+
+/* Search Bar Section */
+.search-section {
+    text-align: center;
+    margin-top: 40px;  /* Menambah jarak antara search bar dan elemen sebelumnya */
+}
+
+.search-bar {
+    padding: 12px;  /* Membuat padding lebih besar untuk memperbesar search bar */
+    width: 60%;      /* Mengubah lebar menjadi 60% */
+    max-width: 500px; /* Membatasi lebar maksimal */
+    font-size: 18px;  /* Membuat teks dalam search bar lebih besar */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Gudang section (products) */
+.gudang {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 20px; 
+    margin: 20px auto; 
+    max-width: 1200px; 
+}
+
+/* Styling for each product */
+.product {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product:hover {
+    transform: scale(1.05); 
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    width: 100%;
+    height: auto; 
+    max-height: 150px;
+    object-fit: contain; 
+    border-radius: 10px;
+}
+
+.product p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* preconfig */
+/* Pre-config section */
+.preconfig {
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center;
+    margin-top: 30px; /* Add space between the menu and the icons */
+    padding-left: 100px;
+}
+
+.device-icon {
+    text-align: center;
+    padding: 20px; /* Increase padding to give space for larger icons */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 20px; /* Space between icons */
+}
+
+.device-icon:hover {
+    transform: scale(1.1); /* Membesarkan ikon saat hover */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Memperbesar bayangan saat hover */
+}
+
+.device-icon img {
+    width: 100px;  /* Increase size of icons */
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.device-icon p {
+    font-size: 16px;
+    color: #333;
+}
+
+.switch-tutorial {
+    text-align: center;
+    margin: 40px 0;  /* Add more margin above and below for spacing */
+}
+
+.tutorial-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;  /* Center the text */
+}
+
+/* Switch grid layout */
+.switch-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns in grid */
+    gap: 10px; /* Spacing between each switch */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.switch-item {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.switch-item img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.switch-item h2 {
+    font-size: 18px;
+    color: #333;   
+}
+
+/* Router tutorial section */
+.router-tutorial {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.tutorial-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;  /* Center the text */
+}
+
+/* Router grid layout */
+.router-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns in grid */
+    gap: 20px; /* Spacing between each router */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.router-item {
+     text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.router-item:hover {
+    transform: scale(1.05); /* Slightly enlarge the item */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add a stronger shadow */
+}
+
+.router-item img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.router-item h2 {
+    font-size: 18px;
+    color: #333;
+}
+
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Background for modal */
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* FAQ Section */
+.faq-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.faq-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.faq-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.faq-item {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Bantuan Section */
+.bantuan-section {
+    margin-top: 40px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.bantuan-section h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.bantuan-section p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Contact Form Styling */
+.contact-form-section {
+    margin-top: 40px;
+    background-color: #fff;
+    padding: 15px; /* Mengurangi padding */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Membatasi lebar formulir */
+    margin: 0 auto; /* Menjaga formulir tetap di tengah */
+}
+
+.contact-form-section h2 {
+    font-size: 20px; /* Mengurangi ukuran font judul */
+    color: #333;
+    margin-bottom: 15px; /* Mengurangi jarak antar elemen */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-size: 14px; /* Menyesuaikan ukuran font label */
+    color: #333;
+    margin-bottom: 6px; /* Mengurangi jarak bawah label */
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 8px; /* Mengurangi padding */
+    margin-bottom: 12px; /* Mengurangi jarak antar elemen */
+    font-size: 14px; /* Menyesuaikan ukuran font */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Membatasi area teks agar dapat menyesuaikan tinggi */
+}
+
+.contact-form button {
+    padding: 8px 12px; /* Mengurangi padding tombol */
+    font-size: 16px; /* Menyesuaikan ukuran font tombol */
+    color: #fff;
+    background-color: #004494;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #003366;
+}
+
+/* login */
+/* Login Section */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 30px;
+}
+
+.login-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.login-box h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Social Media Login Buttons */
+.social-login .social-btn {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.social-login .google {
+    background-color: #3755db;
+    color: white;
+}
+
+.social-login .facebook {
+    background-color: #3b5998;
+    color: white;
+}
+
+.social-login .social-btn:hover {
+    opacity: 0.8;
+}
+
+.divider {
+    margin: 20px 0;
+    font-size: 14px;
+    color: #999;
+}
+
+/* Login Form Styling */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-form label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+}
+
+.login-form input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-form input:focus {
+    border-color: #004494;
+    outline: none;
+}
+
+/* Forgot Password Link */
+.forgot-password {
+    text-align: left;
+    font-size: 12px;
+}
+
+.forgot-password a {
+    color: #004494;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Login Button Styling */
+.login-btn {
+    padding: 12px;
+    background-color: #4f72f2;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Change color when hovering over the login button */
+.login-btn:hover {
+    background-color: #003366; /* New color when hovered */
+}
+
+
+/* Register Link */
+.register-link p {
+    font-size: 14px;
+    color: #333;
+}
+
+.register-link a {
+    color: #004494;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Container untuk Login */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Gambar Promo */
+.login-left {
+    flex: 1;
+    text-align: center;
+}
+
+.login-image {
+    width: 100%; /* Gambar memenuhi 100% lebar container */
+    max-width: 450px; /* Menyediakan batas maksimal */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Kontainer Form Login */
+.login-right {
+    flex: 1;
+    padding: 30px;
+}
+
+.login-box {
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Form Login Styling */
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Forgot Password and Social Login */
+.forgot-password {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.social-btn {
+    background-color: #db4437;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.social-btn.google {
+    background-color: #db4437;
+}
+
+.social-btn.facebook {
+    background-color: #3b5998;
+}
+
+.social-btn:hover {
+    opacity: 0.8;
+}
+
+/* Register Link */
+.register-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #1e90ff;
+    color: white;
+    margin-top: auto; /* Menjaga footer tetap di bawah layar */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    /* Adjust for smaller screens */
+    .gudang {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        width: 80%; /* Make products wider on smaller screens */
+        margin: 10px 0;
+    }
+}
+
